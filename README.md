@@ -32,6 +32,13 @@ Host someinternalhost
 ssh someinternalhost
 ```
 
+## Cloud testapp homework
+
+```
+testapp_IP = 84.201.159.97
+testapp_port = 9292
+```
+
 ### CLI комманда для создания инстанса с использованием startup script для деплоя `reddit-app`
 ```shell
 yc compute instance create \
