@@ -1,0 +1,17 @@
+#cloud-config
+users:
+  - default
+  - name: yc-user
+    shell: /bin/bash
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCk3yovltaLlW25XZt8gL4Mom+cmSKLSeyCo0WxZTuaa9qwiiNHV+Ugrb7D3cFt/VrMhcaSJSfcRYRiYzBuxWvGOqfWrM3JSTDrnnWJiDvmLHmXmbqRYR2GOsOqLsRMg69ooXBBNnrYoxDs8tpeozPAvGxkeQTni/NiLM5BiwIHgW1empmBLlErklmjA5b9QeCDDVtXATkuIcU4BaRafxerImOmhwoLagtp3eMTXoAfE1cb+pQFGcctblbUeCs/A0Bb4SU54IeA0yjmBAk6NXX16yx7jTek0ZV+hbsHTOUaEGI5ZCrzaSeRx4m43XJsD1AltCiRz+BfwglDK2YjTRkE/jiA+LpO6qUhqiqVDlebjyyOP41mZvBIyQ1lUlNy9o8uVGMFd0SGLiJ83K0f9OQLwgebtwS5B+8LbGoZqerFcrDdkOtFQNyJmkdtLd6Cz+FarY1TgiNXWMXIS+MVk4muQAMfwIzBD+xJ5eLPv88t+2yKnufm0UqUGiLLrcn7M0c= aborisov@aborisov
+
+runcmd:
+  - wget https://raw.githubusercontent.com/Otus-DevOps-2020-11/dmnbars_infra/cloud-testapp/install_ruby.sh
+  - bash install_ruby.sh
+
+  - wget https://raw.githubusercontent.com/Otus-DevOps-2020-11/dmnbars_infra/cloud-testapp/install_mongodb.sh
+  - bash install_mongodb.sh
+
+  - wget https://raw.githubusercontent.com/Otus-DevOps-2020-11/dmnbars_infra/cloud-testapp/deploy.sh
+  - bash deploy.sh
