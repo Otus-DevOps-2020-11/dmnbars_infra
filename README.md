@@ -35,7 +35,7 @@ ssh someinternalhost
 ## Cloud testapp homework
 
 ```
-testapp_IP = 84.201.159.97
+testapp_IP = 178.154.246.59
 testapp_port = 9292
 ```
 
