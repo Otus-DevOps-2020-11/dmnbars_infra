@@ -1,6 +1,6 @@
 {
   "yc_folder_id": "folder13d223mxklmcff",
   "yc_source_image_family": "ubuntu-1604-lts",
-  "yc_service_account_key_file": "/home/appuser/service_key.json",
+  "yc_service_account_key_file": "service_key.json.example",
   "ssh_username": "ubuntu"
 }
