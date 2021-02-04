@@ -1,0 +1,42 @@
+{
+  "builders": [
+    {
+      "type": "yandex",
+      "service_account_key_file": "{{ user `yc_service_account_key_file` }}",
+      "folder_id": "{{ user `yc_folder_id`}}",
+      "source_image_family": "{{ user `yc_source_image_family` }}",
+      "image_name": "reddit-full-{{timestamp}}",
+      "image_family": "reddit-full",
+      "ssh_username": "{{ user `ssh_username` }}",
+      "platform_id": "standard-v1",
+      "use_ipv4_nat": true
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "files/reddit-app.service",
+      "destination": "/tmp/reddit-app.service"
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -",
+        "echo \"deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse\" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list",
+        "sudo apt-get update",
+        "sleep 10",
+        "sudo apt-get install -y ruby-full ruby-bundler build-essential mongodb-org git",
+        "sudo systemctl start mongod",
+        "sudo systemctl enable mongod",
+        "sudo mkdir /app",
+        "sudo chown {{ user `ssh_username` }} /app",
+        "git clone -b monolith https://github.com/express42/reddit.git /app",
+        "cd /app",
+        "bundle install",
+        "sudo cp /tmp/reddit-app.service /etc/systemd/system/reddit-app.service",
+        "sudo systemctl start reddit-app",
+        "sudo systemctl enable reddit-app"
+      ]
+    }
+  ]
+}
