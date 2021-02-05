@@ -9,7 +9,7 @@ resource "yandex_lb_target_group" "app" {
 }
 
 resource "yandex_lb_network_load_balancer" "app" {
-  name = "reddit-app-lbr"
+  name = "reddit-app-lb"
 
   listener {
     name = "reddit-app-listener"
