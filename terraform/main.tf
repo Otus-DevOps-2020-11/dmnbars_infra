@@ -6,7 +6,7 @@ provider "yandex" {
 }
 
 resource "yandex_compute_instance" "app" {
-  name = "reddit-app-terraform"
+  name = "reddit-app"
   zone = var.app_zone
 
   resources {
