@@ -50,3 +50,8 @@ yc compute instance create \
   --metadata serial-port-enable=1 \
   --metadata-from-file user-data=metadata.yaml
 ```
+
+## Packer base homework
+ * Добавлен [конфиг packer](packer/ubuntu16.json) для сборки базового образа reddit-base
+ * Добавлен [конфиг packer](packer/immutable.json) для сборки полного baked образа reddit-full
+ * Добавлен [скрипт](config-scripts/create-reddit-vm.sh) для создния vm инстанса с reddit-app
