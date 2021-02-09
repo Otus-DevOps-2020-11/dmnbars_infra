@@ -27,3 +27,7 @@ variable subnet_id {
 variable service_account_key_file {
   description = "key .json"
 }
+variable app_instance_count {
+  description = "count for reddit-app instance"
+  default     = 1
+}
