@@ -6,8 +6,8 @@ resource "yandex_compute_instance" "app" {
   }
 
   resources {
-    cores  = 2
-    memory = 2
+    cores  = var.cores
+    memory = var.memory
   }
 
   boot_disk {

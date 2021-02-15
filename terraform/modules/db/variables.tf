@@ -3,8 +3,16 @@ variable public_key_path {
 }
 variable db_disk_image {
   description = "Disk image for reddit db"
-  default = "reddit-db-base"
+  default     = "reddit-db-base"
 }
 variable subnet_id {
   description = "Subnets for modules"
+}
+variable cores {
+  description = "Db VM cores count"
+  default     = 2
+}
+variable memory {
+  description = "Db VM memory count"
+  default     = 2
 }

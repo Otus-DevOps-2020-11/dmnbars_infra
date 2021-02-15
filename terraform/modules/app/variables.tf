@@ -3,8 +3,16 @@ variable public_key_path {
 }
 variable app_disk_image {
   description = "Disk image for reddit app"
-  default = "reddit-app-base"
+  default     = "reddit-app-base"
 }
 variable subnet_id {
   description = "Subnets for modules"
+}
+variable cores {
+  description = "App VM cores count"
+  default     = 2
+}
+variable memory {
+  description = "App VM memory count"
+  default     = 2
 }
