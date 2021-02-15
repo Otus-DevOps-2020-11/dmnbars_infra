@@ -4,6 +4,7 @@ resource "yandex_compute_instance" "app" {
   labels = {
     tags = "reddit-app"
   }
+
   resources {
     cores  = 2
     memory = 2
@@ -16,7 +17,7 @@ resource "yandex_compute_instance" "app" {
   }
 
   network_interface {
-    subnet_id = yandex_vpc_subnet.app-subnet.id
+    subnet_id = var.subnet_id
     nat       = true
   }
 
