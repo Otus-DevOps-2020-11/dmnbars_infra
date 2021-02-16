@@ -55,3 +55,13 @@ yc compute instance create \
  * Добавлен [конфиг packer](packer/ubuntu16.json) для сборки базового образа reddit-base
  * Добавлен [конфиг packer](packer/immutable.json) для сборки полного baked образа reddit-full
  * Добавлен [скрипт](config-scripts/create-reddit-vm.sh) для создния vm инстанса с reddit-app
+
+## Terraform homework №2
+
+### Задание со *
+ * Создал новый бакет для хранения стейта терраформа
+ * Создал для сервисного аккаунта новый статический ключ доступа
+ * Описал конфигурацию бекенда за исключением `access_key` и `secret_key` в файлах `terraform/prod/backend.tf` и `terraform/stage/backend.tf`
+ * `access_key` и `secret_key` описал в файле `terraform/backend_creds.tf`
+ * Сдублировал конфиг терраформа в отдельную папку вне репозитория
+ * Инитил терраформ командой `terraform init -backend-config=../backend_creds.tf` для папки `terraform/prod` и с измененным путем до `backend_creds.tf` для второй версии конфигурации.
