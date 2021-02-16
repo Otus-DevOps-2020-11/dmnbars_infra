@@ -65,3 +65,9 @@ yc compute instance create \
  * `access_key` и `secret_key` описал в файле `terraform/backend_creds.tf`
  * Сдублировал конфиг терраформа в отдельную папку вне репозитория
  * Инитил терраформ командой `terraform init -backend-config=../backend_creds.tf` для папки `terraform/prod` и с измененным путем до `backend_creds.tf` для второй версии конфигурации.
+
+### Задание с **
+ * Добавил provisioners для модуля app с конфигом для systemd и скриптом деплоя приложения
+ * В `terraform/modules/app/files/puma.service` добавлен `Environment` для проброса url для mongodb
+ * Модуль db теперь ожидает получения переменной db_url, которая строится из внутреннего ip инстанса с базой
+ * В provisioner для модуля db добавлено изменение конфигурации mongodb и ее рестарт
