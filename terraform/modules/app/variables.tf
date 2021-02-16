@@ -22,3 +22,7 @@ variable private_key_path {
 variable db_url {
   description = "Url to database"
 }
+variable deploy {
+  description = "Need deploy of app or not"
+  default     = false
+}

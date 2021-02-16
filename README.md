@@ -71,3 +71,4 @@ yc compute instance create \
  * В `terraform/modules/app/files/puma.service` добавлен `Environment` для проброса url для mongodb
  * Модуль db теперь ожидает получения переменной db_url, которая строится из внутреннего ip инстанса с базой
  * В provisioner для модуля db добавлено изменение конфигурации mongodb и ее рестарт
+ * Запуск provisioners теперь зависит от переменной `deploy_app`, реализованно с помощью использования `null_resource` и `count`

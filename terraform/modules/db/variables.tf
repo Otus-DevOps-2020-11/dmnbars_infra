@@ -19,3 +19,7 @@ variable memory {
 variable private_key_path {
   description = "Path to the private key used for ssh access"
 }
+variable deploy {
+  description = "Need deploy of app or not"
+  default     = false
+}
