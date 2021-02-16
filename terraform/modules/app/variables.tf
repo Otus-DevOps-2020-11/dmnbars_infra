@@ -16,3 +16,9 @@ variable memory {
   description = "App VM memory count"
   default     = 2
 }
+variable private_key_path {
+  description = "Path to the private key used for ssh access"
+}
+variable db_url {
+  description = "Url to database"
+}
