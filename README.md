@@ -72,3 +72,9 @@ yc compute instance create \
  * Модуль db теперь ожидает получения переменной db_url, которая строится из внутреннего ip инстанса с базой
  * В provisioner для модуля db добавлено изменение конфигурации mongodb и ее рестарт
  * Запуск provisioners теперь зависит от переменной `deploy_app`, реализованно с помощью использования `null_resource` и `count`
+
+## Ansible homework №1
+
+### Задание со *
+ * Разница между форматом статического и динамического json inventory видна в файлах `ansible/inventory_dynamic.json` и `ansible/inventory.json`
+ * Скрипт `ansible/inventory.py` берет файл `ansible/inventory.json` (статический формат) и преобразует его в динамический формат
