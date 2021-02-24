@@ -1,0 +1,15 @@
+---
+- name: Prepare app image
+  hosts: all
+  become: true
+  tasks:
+    - name: install git and ruby
+      apt:
+        update_cache: yes
+        name: "{{ item }}"
+        state: latest
+      loop:
+        - git
+        - ruby-full
+        - ruby-bundler
+        - build-essential

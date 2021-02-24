@@ -4,7 +4,7 @@
   tags: db-tag
   become: true
   vars:
-    mongo_bind_ip: 10.130.0.27
+    mongo_bind_ip: 10.130.0.8
   tasks:
     - name: Change mongo config file
       template:
@@ -24,7 +24,7 @@
   tags: app-tag
   become: true
   vars:
-    db_host: 10.130.0.27
+    db_host: 10.130.0.8
   tasks:
     - name: Add unit file for Puma
       copy:

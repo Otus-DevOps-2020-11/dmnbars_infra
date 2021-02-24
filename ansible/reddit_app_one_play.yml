@@ -2,8 +2,8 @@
 - name: Configure hosts & deploy application
   hosts: all
   vars:
-    mongo_bind_ip: 10.130.0.27
-    db_host: 10.130.0.27
+    mongo_bind_ip: 10.130.0.8
+    db_host: 10.130.0.8
   tasks:
     - name: Change mongo config file
       become: true
