@@ -2,8 +2,6 @@
 - name: Configure MongoDB
   hosts: db
   become: true
-  vars:
-    mongo_bind_ip: 10.130.0.8
   tasks:
     - name: Change mongo config file
       template:

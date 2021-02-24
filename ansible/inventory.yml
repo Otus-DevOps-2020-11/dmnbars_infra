@@ -1,10 +1,13 @@
 all:
+  vars:
+    mongo_bind_ip: 10.130.0.34
+    db_host: 10.130.0.34
   children:
     app:
       hosts:
         appserver:
-          ansible_host: 130.193.50.168
+          ansible_host: 178.154.225.236
     db:
       hosts:
         dbserver:
-          ansible_host: 84.252.130.95
+          ansible_host: 84.252.129.157
