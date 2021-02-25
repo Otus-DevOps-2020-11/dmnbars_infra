@@ -78,3 +78,16 @@ yc compute instance create \
 ### Задание со *
  * Разница между форматом статического и динамического json inventory видна в файлах `ansible/inventory_dynamic.json` и `ansible/inventory.json`
  * Скрипт `ansible/inventory.py` берет файл `ansible/inventory.json` (статический формат) и преобразует его в динамический формат
+
+## Ansible homework №2
+
+### Задание
+ * Написан деплой по принципу "один playbook, один сценарий" - `ansible/reddit_app_one_play.yml`
+ * Написан деплой по принципу "один playbook, несколько сценариев" - `ansible/reddit_app_multiple_plays.yml`
+ * Написан деплой по принципу "несколько playbooks" - `ansible/site.yml`, `ansible/db.yml`, `ansible/app.yml`, `ansible/deploy.yml
+ * Написаны ansible provisioners для создания packer образов app и db
+
+### Задание со *
+ * Написан новый ansible dynamic inventory - `ansilbe/inventory_terraform.py`.
+ * Данные для hosts и vars берутся из вывода terraform output
+ * Не думаю, что это самый "оптимальный" способ, но так как конфиг и стейт терраформа находится в этом же проекте, то на мой взгляд этот способ очень прост)
