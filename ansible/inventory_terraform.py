@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 import json
 import subprocess
+import sys
+
+environment = 'stage'
+if len(sys.argv) > 1:
+    environment = sys.argv[1]
 
 ips = {
     "external_ip_address_app": "",
@@ -9,7 +14,7 @@ ips = {
 }
 
 for key in ips:
-    result = subprocess.run(f'cd ../terraform/stage && terraform output {key}', shell=True, stdout=subprocess.PIPE)
+    result = subprocess.run(f'cd ../terraform/{environment} && terraform output {key}', shell=True, stdout=subprocess.PIPE)
     ips[key] = result.stdout.strip().decode()
 
 inventory = {
