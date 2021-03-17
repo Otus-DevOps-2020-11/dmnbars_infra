@@ -1,4 +1,4 @@
-name: 'Terraform Validate'
+name: 'tflint'
 
 on: push
 
@@ -13,9 +13,8 @@ jobs:
           - stage
     runs-on: ubuntu-latest
     steps:
-      - uses: hashicorp/setup-terraform@v1
-        with:
-          terraform_version: 0.12.8
+      - uses: terraform-linters/setup-tflint@v1
+        name: Setup TFLint
       - uses: actions/checkout@v2
       - name: lint
         working-directory: terraform/${{ matrix.environment }}
