@@ -14,7 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: terraform-linters/setup-tflint@v1
-        name: Setup TFLint
       - uses: actions/checkout@v2
       - name: lint
         working-directory: terraform/${{ matrix.environment }}
