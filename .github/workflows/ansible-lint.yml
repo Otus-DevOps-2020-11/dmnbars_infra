@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: add mock vault file
+        run: |
+          - touch ansible/vault.key
       - name: lint
         uses: addnab/docker-run-action@v2
         with:
