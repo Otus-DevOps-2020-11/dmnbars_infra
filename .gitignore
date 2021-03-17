@@ -10,3 +10,4 @@ variables.json
 terraform/backend_creds.tf
 *.retry
 jdauphant.nginx
+vault.key
