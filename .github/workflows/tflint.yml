@@ -3,10 +3,12 @@ name: 'Terraform Validate'
 on: push
 
 jobs:
-  terraform-validate:
+  tflint:
     strategy:
       matrix:
-        environment:
+        folder:
+          - modules/app
+          - modules/db
           - prod
           - stage
     runs-on: ubuntu-latest
@@ -15,11 +17,7 @@ jobs:
         with:
           terraform_version: 0.12.8
       - uses: actions/checkout@v2
-      - name: init terraform
+      - name: lint
         working-directory: terraform/${{ matrix.environment }}
         run: |
-          terraform init -backend=false
-      - name: validate
-        working-directory: terraform/${{ matrix.environment }}
-        run: |
-          terraform validate
+          tflint
