@@ -15,7 +15,7 @@
   "provisioners": [
     {
       "type": "file",
-      "source": "files/reddit-app.service",
+      "source": "packer/files/reddit-app.service",
       "destination": "/tmp/reddit-app.service"
     },
     {

@@ -14,9 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: debug
-        run: |
-          ls -la
       - name: validate file
         run: |
           packer validate -var-file=packer/variables.json.example packer/${{ matrix.packerfile }}
