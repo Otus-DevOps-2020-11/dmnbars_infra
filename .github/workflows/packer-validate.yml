@@ -11,13 +11,11 @@ jobs:
           - db.json
           - immutable.json
           - ubuntu16.json
-    runs-on: hashicorp/packer:1.6.4
+    runs-on: ubuntu-latest
     steps:
       - name: test
         run: |
           echo ${{ matrix.packerfile }}
-      - name: Packer validate template-y without argument
-        uses: dawitnida/packer-github-actions/validate@v1.0.5
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TEMPLATE_FILE_NAME: ${{ matrix.packerfile }}
+      - name: validate file
+        run: |
+          packer validate -var-file=packer/variables.json.example packer/${{ matrix.packerfile }}
