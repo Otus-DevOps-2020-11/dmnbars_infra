@@ -55,7 +55,7 @@
   tags: deploy-tag
   tasks:
     - name: Install git
-      become: yes
+      become: true
       apt:
         name: git
         state: present

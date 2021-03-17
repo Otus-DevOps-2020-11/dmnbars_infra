@@ -9,9 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: debug
-        run: |
-          pwd
       - name: lint
         uses: addnab/docker-run-action@v2
         with:

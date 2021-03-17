@@ -21,8 +21,8 @@
 - name: enable puma
   systemd:
     name: puma
-    enabled: yes
+    enabled: true
 
 - name: Update apt-get cache for correct work of jdauphant.nginx
   apt:
-    update_cache: yes
+    update_cache: true

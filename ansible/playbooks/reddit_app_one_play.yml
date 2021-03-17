@@ -34,11 +34,11 @@
       become: true
       systemd:
         name: puma
-        enabled: yes
+        enabled: true
       tags: app-tag
 
     - name: Install git
-      become: yes
+      become: true
       apt:
         name: git
         state: present
