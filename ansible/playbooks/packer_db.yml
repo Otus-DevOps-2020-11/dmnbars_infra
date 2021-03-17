@@ -17,7 +17,7 @@
       apt:
         update_cache: yes
         name: mongodb-org
-        state: latest
+        state: present
 
     - name: enable and start mongod service
       systemd:

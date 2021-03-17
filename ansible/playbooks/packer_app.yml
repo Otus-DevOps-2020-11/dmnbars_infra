@@ -7,7 +7,7 @@
       apt:
         update_cache: yes
         name: "{{ item }}"
-        state: latest
+        state: present
       loop:
         - git
         - ruby-full
