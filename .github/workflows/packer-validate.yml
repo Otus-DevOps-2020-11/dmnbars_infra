@@ -13,9 +13,10 @@ jobs:
           - ubuntu16.json
     runs-on: ubuntu-latest
     steps:
-      - name: test
+      - uses: actions/checkout@v2
+      - name: debug
         run: |
-          echo ${{ matrix.packerfile }}
+          ls -la
       - name: validate file
         run: |
           packer validate -var-file=packer/variables.json.example packer/${{ matrix.packerfile }}
