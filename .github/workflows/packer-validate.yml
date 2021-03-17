@@ -1,6 +1,8 @@
 name: 'Packer Validate'
 
-on: push
+on:
+  - push
+  - pull_request
 
 jobs:
   packer-validate:
