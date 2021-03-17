@@ -13,6 +13,6 @@ jobs:
         with:
           registry: quay.io
           image: ansible/toolset:latest
-          options: --rm -v ${PWD}/ansible:/app -w /app -it
+          options: -v ${PWD}/ansible:/app -w /app
           run: |
             ansible-lint
