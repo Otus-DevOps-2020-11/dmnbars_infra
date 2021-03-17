@@ -9,3 +9,4 @@ variables.json
 .terraform/
 terraform/backend_creds.tf
 *.retry
+jdauphant.nginx
