@@ -1,8 +1,5 @@
+![lint](https://github.com/Otus-DevOps-2020-11/dmnbars_infra/actions/workflows/lint.yml/badge.svg)
 ![tests](https://github.com/Otus-DevOps-2020-11/dmnbars_infra/actions/workflows/run-tests.yml/badge.svg)
-![packer-validate](https://github.com/Otus-DevOps-2020-11/dmnbars_infra/actions/workflows/packer-validate.yml/badge.svg)
-![terraform-validate](https://github.com/Otus-DevOps-2020-11/dmnbars_infra/actions/workflows/terraform-validate.yml/badge.svg)
-![tflint](https://github.com/Otus-DevOps-2020-11/dmnbars_infra/actions/workflows/tflint.yml/badge.svg)
-![ansible-lint](https://github.com/Otus-DevOps-2020-11/dmnbars_infra/actions/workflows/ansible-lint.yml/badge.svg)
 
 # dmnbars_infra
 dmnbars Infra repository
