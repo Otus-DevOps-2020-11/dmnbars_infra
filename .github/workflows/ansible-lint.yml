@@ -8,11 +8,11 @@ jobs:
   ansible-lint:
     runs-on: ubuntu-latest
     steps:
-      - name: install ansible-lint
-        run: |
-          pip install "ansible-lint[yamllint]"
-      - uses: actions/checkout@v2
       - name: lint
-        working-directory: ansible
-        run: |
-          ansible-lint
+        uses: addnab/docker-run-action@v2
+        with:
+          registry: quay.io
+          image: ansible/toolset:latest
+          options: --rm -v ${PWD}/ansible:/app -w /app -it
+          run: |
+            ansible-lint
