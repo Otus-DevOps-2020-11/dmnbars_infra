@@ -11,6 +11,9 @@ jobs:
           - stage
     runs-on: ubuntu-latest
     steps:
+      - name: debug
+        run: |
+          terraform --version
       - uses: actions/checkout@v2
       - name: init terraform
         working-directory: terraform/${{ matrix.environment }}
