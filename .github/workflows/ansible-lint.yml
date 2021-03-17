@@ -11,8 +11,7 @@ jobs:
       - name: lint
         uses: addnab/docker-run-action@v2
         with:
-          registry: quay.io
-          image: ansible/toolset:latest
+          image: quay.io/ansible/toolset:latest
           options: -v ${PWD}/ansible:/app -w /app
           run: |
             ansible-lint
