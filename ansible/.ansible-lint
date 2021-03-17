@@ -2,3 +2,6 @@ exclude_paths:
   - roles/jdauphant.nginx
   - environments/prod/credentials.yml
   - environments/stage/credentials.yml
+
+mock_roles:
+  - jdauphant.nginx
