@@ -8,8 +8,11 @@ jobs:
   ansible-lint:
     runs-on: ubuntu-latest
     steps:
+      - name: install ansible-lint
+        run: |
+          pip install "ansible-lint[yamllint]"
       - uses: actions/checkout@v2
       - name: lint
-        uses: ansible/ansible-lint-action@master
-        with:
-          targets: ansible
+        working-directory: ansible
+        run: |
+          ansible-lint
