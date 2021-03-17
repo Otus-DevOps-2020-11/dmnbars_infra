@@ -1,0 +1,23 @@
+name: 'Terraform Validate'
+
+on: push
+
+jobs:
+  terraform-validate:
+    strategy:
+      matrix:
+        environment:
+          - prod
+          - stage
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: move to right location
+        run: |
+          cd terraform/${{ matrix.environment }}
+      - name: init terraform
+        run: |
+          terraform init -backend=false
+      - name: validate
+        run: |
+          terraform validate
