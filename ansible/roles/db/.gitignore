@@ -1,8 +1,0 @@
-.idea
-.vagrant/
-*.log
-*.pyc
-.molecule
-.cache
-.pytest_cache
-venv

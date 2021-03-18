@@ -10,6 +10,7 @@ variables.json
 terraform/backend_creds.tf
 *.retry
 jdauphant.nginx
+ansible/roles/db`
 vault.key
 # Vagrant & molecule
 .vagrant/
