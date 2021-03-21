@@ -1,0 +1,74 @@
+name: 'Lint'
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  ansible-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: add mock vault file
+        run: |
+          touch ansible/vault.key && echo mock_secret > ansible/vault.key
+      - name: lint
+        uses: addnab/docker-run-action@v2
+        with:
+          image: quay.io/ansible/toolset:latest
+          options: -v ${{ github.workspace }}/ansible:/app -w /app
+          run: |
+            ansible-lint
+
+  packer-validate:
+    strategy:
+      matrix:
+        packerfile:
+          - app.json
+          - db.json
+          - immutable.json
+          - ubuntu16.json
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: validate
+        run: |
+          packer validate -var-file=packer/variables.json.example packer/${{ matrix.packerfile }}
+
+  terraform-validate:
+    strategy:
+      matrix:
+        environment:
+          - prod
+          - stage
+    runs-on: ubuntu-latest
+    steps:
+      - uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 0.12.8
+      - uses: actions/checkout@v2
+      - name: init terraform
+        working-directory: terraform/${{ matrix.environment }}
+        run: |
+          terraform init -backend=false
+      - name: validate
+        working-directory: terraform/${{ matrix.environment }}
+        run: |
+          terraform validate
+
+  tflint:
+    strategy:
+      matrix:
+        folder:
+          - modules/app
+          - modules/db
+          - prod
+          - stage
+    runs-on: ubuntu-latest
+    steps:
+      - uses: terraform-linters/setup-tflint@v1
+      - uses: actions/checkout@v2
+      - name: lint
+        working-directory: terraform/${{ matrix.environment }}
+        run: |
+          tflint

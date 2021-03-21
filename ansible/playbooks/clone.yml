@@ -3,7 +3,7 @@
   hosts: app
   tasks:
     - name: Install git
-      become: yes
+      become: true
       apt:
         name: git
         state: present
@@ -12,3 +12,4 @@
       git:
         repo: https://github.com/express42/reddit.git
         dest: /home/ubuntu/reddit
+        version: master

@@ -5,9 +5,9 @@
   tasks:
     - name: install git and ruby
       apt:
-        update_cache: yes
+        update_cache: true
         name: "{{ item }}"
-        state: latest
+        state: present
       loop:
         - git
         - ruby-full

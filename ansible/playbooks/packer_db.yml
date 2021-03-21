@@ -15,12 +15,12 @@
 
     - name: install mongod
       apt:
-        update_cache: yes
+        update_cache: true
         name: mongodb-org
-        state: latest
+        state: present
 
     - name: enable and start mongod service
       systemd:
         name: mongod
-        enabled: yes
+        enabled: true
         state: started

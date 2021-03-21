@@ -1,3 +1,6 @@
+![lint](https://github.com/Otus-DevOps-2020-11/dmnbars_infra/actions/workflows/lint.yml/badge.svg)
+![tests](https://github.com/Otus-DevOps-2020-11/dmnbars_infra/actions/workflows/run-tests.yml/badge.svg)
+
 # dmnbars_infra
 dmnbars Infra repository
 

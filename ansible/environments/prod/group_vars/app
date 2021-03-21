@@ -1,0 +1,9 @@
+# закомментированно, так как переменная устанавливается в inventory_terraform для более удобной разработки
+# db_host: 10.132.0.2
+nginx_sites:
+  default:
+    - listen 80
+    - server_name "reddit"
+    - location / {
+        proxy_pass http://127.0.0.1:9292;
+      }
